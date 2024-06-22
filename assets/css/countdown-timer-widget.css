@@ -2,6 +2,11 @@
 	
 }
 
+.countdown-widget{
+  padding: 10px 0px;
+  background: #ddd;
+  border-radius: 4px;
+}
 
  
 @media only screen and(max-width: 493px) {

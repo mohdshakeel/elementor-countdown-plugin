@@ -56,7 +56,7 @@ class Elementor_Countdown_Widget extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'scheme' => [                   
                      'type' => \Elementor\Core\Schemes\Color::get_type(),
-                    'value' => \Elementor\Core\Schemes\Color::COLOR_1
+                     'value' => \Elementor\Core\Schemes\Color::COLOR_1
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .countdown-widget' => 'background-color: {{VALUE}};',
@@ -72,14 +72,15 @@ class Elementor_Countdown_Widget extends \Elementor\Widget_Base {
         $settings = $this->get_settings_for_display();
         $message = $settings['message'];
         $start_date = $settings['start_date'];
-        $box_background_color = $settings['box_background_color'];
+        $box_background_color = $settings['box_background_color']; 
+        $containerStyle = ($box_background_color)? 'style=background-color:'.$box_background_color :'';
         ?>
 
-        <div class="countdown-widget" style="background-color:<?php echo esc_html($box_background_color); ?>" >
+        <div class="countdown-widget" <?php echo esc_html($containerStyle); ?> >
             
-            
+        <p class="countdown-message" ><?php echo esc_html($message); ?></p>
             <div class="htop__ctd-wrapper" id="countdown-timer-<?php echo esc_attr($this->get_id()); ?>">
-                <p class="countdown-message" ><?php echo esc_html($message); ?></p>
+                
                 <div class="htop__ctd-counter htop__ctd-day top1">
                     <p class="line1">00</p>
                     <p class="line2">DAYS</p>

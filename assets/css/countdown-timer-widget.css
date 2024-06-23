@@ -49,3 +49,6 @@
 p.countdown-message ,p.line2{
 color:#fff !important;
 }
+p.countdown-message{
+  text-align: center;
+}
